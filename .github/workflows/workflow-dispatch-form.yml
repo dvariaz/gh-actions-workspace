@@ -1,0 +1,34 @@
+name: Workflow Dispatch Form
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name'
+        required: true
+        type: string
+      favorite_lang:
+        description: 'Favorite Programming Language'
+        required: true
+        type: choice
+        options:
+          - 'C++'
+          - 'C#'
+          - 'Java'
+          - 'Python'
+          - 'JavaScript'
+      short_description:
+        description: 'Short Description'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  print-favorite-lang:
+    runs-on: self-hosted
+    steps:
+      - name: Print greeting
+        run: |
+          echo "Hello, my name is ${inputs.name}!"
+          echo "Favorite Programming Language: ${inputs.favorite_lang}"
+          echo "Short Description: ${inputs.short_description}"

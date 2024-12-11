@@ -29,6 +29,6 @@ jobs:
     steps:
       - name: Print greeting
         run: |
-          echo "Hello, my name is ${inputs.name}!"
-          echo "Favorite Programming Language: ${inputs.favorite_lang}"
-          echo "Short Description: ${inputs.short_description}"
+          echo "Hello, my name is ${{inputs.name}}!"
+          echo "Favorite Programming Language: ${{inputs.favorite_lang}}"
+          echo "Short Description: ${{inputs.short_description}}"

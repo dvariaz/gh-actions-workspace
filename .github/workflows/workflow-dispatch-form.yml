@@ -21,11 +21,12 @@ on:
 jobs:
   print-favorite-lang:
     runs-on: self-hosted
+    environment: staging
     steps:
       - name: Print greeting
         run: |
           echo "Dispatched by ${{github.actor}} with event name ${{github.event_name}}"
-          echo "Reading variable name ${{ vars.Staging.MY_VARIABLE_NAME }}"
+          echo "Reading variable name: ${{ vars.MY_VARIABLE }}"
           echo "Hello, my name is ${{inputs.name}}!"
           echo "Favorite Programming Language: ${{inputs.favorite_lang}}"
       - name: Recommend
